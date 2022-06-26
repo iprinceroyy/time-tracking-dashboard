@@ -18,6 +18,10 @@ body {
   align-items: center;
 }
 
+.sr--only {
+  font-size: 0;
+}
+
 .dashboard {
   width: 75vw;
   min-height: 100vh;
@@ -62,6 +66,7 @@ body {
   color: rgba(189, 193, 255, 0.7);
 }
 
+/*  Activity  */
 .activity {
   background-color: #ff8c66;
   background-image: url("../assets/images/icon-work.svg");
@@ -72,22 +77,37 @@ body {
   border-radius: 20px;
 }
 
-.status {
+.activity__status {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: baseline;
+  row-gap: 0.5rem;
+  align-items: center;
   color: white;
   background-color: #1c1f4a;
   border-radius: 20px;
   padding: 2rem;
   margin-top: 2rem;
+  font-size: inherit;
+}
+.activity__status .activity__title {
+  font-size: inherit;
+  font-weight: 500;
+}
+.activity__status .status__current {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.activity__status .status__previous {
+  color: rgba(189, 193, 255, 0.7);
+  text-align: right;
 }
 
 hr {
-  width: 0.7rem;
+  width: 1.2rem;
   height: 0.1rem;
-  border: 4px dotted white;
+  border: 4px dotted rgba(189, 193, 255, 0.7);
   border-bottom: 0;
+  margin-right: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

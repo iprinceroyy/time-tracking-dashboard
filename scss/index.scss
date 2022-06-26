@@ -48,6 +48,10 @@ body {
     align-items: center;
 }
 
+.sr--only {
+    font-size: 0;
+}
+
 .dashboard {
     width: calc(100vw + -25vw);
     min-height: 100vh;
@@ -92,6 +96,9 @@ body {
     color: rgba($pale-blue, 0.7);
 }
 
+
+/*  Activity  */
+
 .activity {
     background-color: $light-red;
     background-image: url("../assets/images/icon-work.svg");
@@ -102,93 +109,35 @@ body {
     border-radius: 20px;
 }
 
-.status {
+.activity__status {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: baseline;
+    row-gap: 0.5rem;
+    align-items: center;
     color: white;
     background-color: $dark-blue;
     border-radius: 20px;
     padding: 2rem;
     margin-top: 2rem;
+    font-size: inherit;
+    .activity__title {
+        font-size: inherit;
+        font-weight: $fw-500;
+    }
+    .status__current {
+        font-size: 2rem;
+        font-weight: $fw-300;
+    }
+    .status__previous {
+        color: rgba($pale-blue, 0.7);
+        text-align: right;
+    }
 }
 
 hr {
-    width: 0.7rem;
+    width: 1.2rem;
     height: 0.1rem;
-    border: 4px dotted white;
-    border-bottom: 0;
+    border: 4px dotted rgba($pale-blue, 0.7);
+    border-bottom: 0; // To make single line dots
+    margin-right: 0; // To align dots right side
 }
-
-// Report for Jeremy Robson Daily Weekly Monthly Work 5hrs
-//     <!-- daily -->
-//     Previous - 7hrs
-//     <!-- daily -->
-//     32hrs
-//     <!-- weekly -->
-//     Previous - 36hrs
-//     <!-- weekly -->
-//     103hrs
-//     <!-- monthly -->
-//     Previous - 128hrs
-//     <!-- monthly -->
-//     Play 1hr
-//     <!-- daily -->
-//     Previous - 2hrs
-//     <!-- daily -->
-//     10hrs
-//     <!-- weekly -->
-//     Previous - 8hrs
-//     <!-- weekly -->
-//     23hrs
-//     <!-- monthly -->
-//     Previous - 29hrs
-//     <!-- monthly -->
-//     Study 0hrs
-//     <!-- daily -->
-//     Previous - 1hr
-//     <!-- daily -->
-//     4hrs
-//     <!-- weekly -->
-//     Previous - 7hrs
-//     <!-- weekly -->
-//     13hrs
-//     <!-- monthly -->
-//     Previous - 19hrs
-//     <!-- monthly -->
-//     Exercise 1hr
-//     <!-- daily -->
-//     Previous - 1hr
-//     <!-- daily -->
-//     4hrs
-//     <!-- weekly -->
-//     Previous - 5hrs
-//     <!-- weekly -->
-//     11hrs
-//     <!-- monthly -->
-//     Previous - 18hrs
-//     <!-- monthly -->
-//     Social 1hr
-//     <!-- daily -->
-//     Previous - 3hrs
-//     <!-- daily -->
-//     5hrs
-//     <!-- weekly -->
-//     Previous - 10hrs
-//     <!-- weekly -->
-//     21hrs
-//     <!-- monthly -->
-//     Previous - 23hrs
-//     <!-- monthly -->
-//     Self Care 0hrs
-//     <!-- daily -->
-//     Previous - 1hr
-//     <!-- daily -->
-//     2hrs
-//     <!-- weekly -->
-//     Previous - 2hrs
-//     <!-- weekly -->
-//     7hrs
-//     <!-- monthly -->
-//     Previous - 11hrs
-//     monthly

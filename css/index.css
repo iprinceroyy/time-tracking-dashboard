@@ -9,5 +9,85 @@
 /*  Body Copy  */
 /*  Font  */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+/* =============== Main ================ */
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #0f1424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard {
+  width: 75vw;
+  min-height: 100vh;
+  margin-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile {
+  background-color: #1c1f4a;
+  border-radius: 20px;
+}
+
+.profile__avatar {
+  display: flex;
+  align-items: center;
+  background-color: #5847eb;
+  color: rgba(189, 193, 255, 0.7);
+  margin-bottom: 2rem;
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  border-radius: 20px;
+}
+.profile__avatar img {
+  width: 5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.profile__avatar figcaption {
+  padding-left: 2rem;
+}
+.profile__avatar figcaption span {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.day {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1rem;
+  color: rgba(189, 193, 255, 0.7);
+}
+
+.activity {
+  background-color: #ff8c66;
+  background-image: url("../assets/images/icon-work.svg");
+  background-repeat: no-repeat;
+  background-position: right 5% top -12%;
+  background-size: 4rem;
+  background-blend-mode: luminosity;
+  border-radius: 20px;
+}
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: baseline;
+  color: white;
+  background-color: #1c1f4a;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+hr {
+  width: 0.7rem;
+  height: 0.1rem;
+  border: 4px dotted white;
+  border-bottom: 0;
+}
 
 /*# sourceMappingURL=index.css.map */

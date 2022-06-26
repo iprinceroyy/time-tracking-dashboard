@@ -31,8 +31,8 @@ $font-size: 18px;
 
 /*  Font  */
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
-$font-family: "Rubik",
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+$font-family: 'Rubik',
 sans-serif;
 $fw-300: 300;
 $fw-400: 400;
@@ -60,6 +60,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+
+/*  Avatar Profile  */
 
 .profile {
     background-color: $dark-blue;
@@ -100,13 +103,41 @@ body {
 /*  Activity  */
 
 .activity {
-    background-color: $light-red;
-    background-image: url("../assets/images/icon-work.svg");
     background-repeat: no-repeat;
     background-position: right 5% top -12%;
     background-size: 4rem;
     background-blend-mode: luminosity;
     border-radius: 20px;
+}
+
+.activity--work {
+    background-color: $light-red;
+    background-image: url('../assets/images/icon-work.svg');
+}
+
+.activity--play {
+    background-color: $soft-blue;
+    background-image: url('../assets/images/icon-play.svg');
+}
+
+.activity--study {
+    background-color: $light-red-study;
+    background-image: url('../assets/images/icon-study.svg');
+}
+
+.activity--exercise {
+    background-color: $lime-green;
+    background-image: url('../assets/images/icon-exercise.svg');
+}
+
+.activity--social {
+    background-color: $violet;
+    background-image: url('../assets/images/icon-social.svg');
+}
+
+.activity--self-care {
+    background-color: $soft-orange;
+    background-image: url('../assets/images/icon-self-care.svg');
 }
 
 .activity__status {
@@ -124,11 +155,11 @@ body {
         font-size: inherit;
         font-weight: $fw-500;
     }
-    .status__current {
+    .current {
         font-size: 2rem;
         font-weight: $fw-300;
     }
-    .status__previous {
+    .previous {
         color: rgba($pale-blue, 0.7);
         text-align: right;
     }

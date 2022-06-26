@@ -31,6 +31,7 @@ body {
   justify-content: space-between;
 }
 
+/*  Avatar Profile  */
 .profile {
   background-color: #1c1f4a;
   border-radius: 20px;
@@ -68,13 +69,41 @@ body {
 
 /*  Activity  */
 .activity {
-  background-color: #ff8c66;
-  background-image: url("../assets/images/icon-work.svg");
   background-repeat: no-repeat;
   background-position: right 5% top -12%;
   background-size: 4rem;
   background-blend-mode: luminosity;
   border-radius: 20px;
+}
+
+.activity--work {
+  background-color: #ff8c66;
+  background-image: url("../assets/images/icon-work.svg");
+}
+
+.activity--play {
+  background-color: #56c2e6;
+  background-image: url("../assets/images/icon-play.svg");
+}
+
+.activity--study {
+  background-color: #ff5c7c;
+  background-image: url("../assets/images/icon-study.svg");
+}
+
+.activity--exercise {
+  background-color: #4acf81;
+  background-image: url("../assets/images/icon-exercise.svg");
+}
+
+.activity--social {
+  background-color: #7536d3;
+  background-image: url("../assets/images/icon-social.svg");
+}
+
+.activity--self-care {
+  background-color: #f1c65b;
+  background-image: url("../assets/images/icon-self-care.svg");
 }
 
 .activity__status {
@@ -93,11 +122,11 @@ body {
   font-size: inherit;
   font-weight: 500;
 }
-.activity__status .status__current {
+.activity__status .current {
   font-size: 2rem;
   font-weight: 300;
 }
-.activity__status .status__previous {
+.activity__status .previous {
   color: rgba(189, 193, 255, 0.7);
   text-align: right;
 }

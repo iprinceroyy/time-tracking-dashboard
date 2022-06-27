@@ -59,6 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 
@@ -67,6 +68,9 @@ body {
 .profile {
     background-color: $dark-blue;
     border-radius: 20px;
+    @media (min-width: 380px) {
+        grid-area: 1 / 1 / span 2 / span 1;
+    }
 }
 
 .profile__avatar {
@@ -84,10 +88,10 @@ body {
         border-radius: 50%;
     }
     figcaption {
-        padding-left: 2rem;
+        padding-left: 1.3rem;
         span {
             display: block;
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
     }
 }
@@ -156,7 +160,8 @@ body {
         font-weight: $fw-500;
     }
     .current {
-        font-size: 2rem;
+        //font-size: clamp(2rem, 1.7vw + 1.57rem, 2.94rem);
+        font-size: clamp(2rem, 3.5vw + 1.179rem, 3rem);
         font-weight: $fw-300;
     }
     .previous {

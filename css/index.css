@@ -29,12 +29,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 /*  Avatar Profile  */
 .profile {
   background-color: #1c1f4a;
   border-radius: 20px;
+}
+@media (min-width: 380px) {
+  .profile {
+    grid-area: 1/1/span 2/span 1;
+  }
 }
 
 .profile__avatar {
@@ -53,11 +59,11 @@ body {
   border-radius: 50%;
 }
 .profile__avatar figcaption {
-  padding-left: 2rem;
+  padding-left: 1.3rem;
 }
 .profile__avatar figcaption span {
   display: block;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .day {
@@ -123,7 +129,7 @@ body {
   font-weight: 500;
 }
 .activity__status .current {
-  font-size: 2rem;
+  font-size: clamp(2rem, 3.5vw + 1.179rem, 3rem);
   font-weight: 300;
 }
 .activity__status .previous {

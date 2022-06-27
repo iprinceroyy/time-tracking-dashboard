@@ -107,7 +107,7 @@ body {
 }
 
 .activity__status {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 0.5rem;
   align-items: center;
@@ -129,6 +129,10 @@ body {
 .activity__status .previous {
   color: rgba(189, 193, 255, 0.7);
   text-align: right;
+}
+
+.active {
+  display: grid;
 }
 
 hr {

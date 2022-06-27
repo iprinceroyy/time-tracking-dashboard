@@ -23,13 +23,18 @@ body {
 }
 
 .dashboard {
-  width: 75vw;
   min-height: 100vh;
   margin-block: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 2rem;
+}
+@media (min-width: 45rem) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content);
+  }
 }
 
 /*  Avatar Profile  */
@@ -114,15 +119,28 @@ body {
 
 .activity__status {
   display: none;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 0.5rem;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
   color: white;
   background-color: #1c1f4a;
   border-radius: 20px;
-  padding: 2rem;
+  padding-inline: 2rem;
+  padding-block: 2rem;
   margin-top: 2rem;
   font-size: inherit;
+}
+.activity__status div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 45rem) {
+  .activity__status div:nth-of-type(2) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .activity__status .activity__title {
   font-size: inherit;
@@ -138,7 +156,7 @@ body {
 }
 
 .active {
-  display: grid;
+  display: flex;
 }
 
 hr {

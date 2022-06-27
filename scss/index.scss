@@ -53,13 +53,16 @@ body {
 }
 
 .dashboard {
-    width: calc(100vw + -25vw);
     min-height: 100vh;
     margin-block: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 2rem;
+    @media (min-width: 45rem) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, min-content);
+    }
 }
 
 
@@ -76,6 +79,7 @@ body {
 .profile__avatar {
     display: flex;
     align-items: center;
+    //height: min(80%, 600px);
     background-color: $blue;
     color: rgba($pale-blue, 0.7);
     margin-bottom: 2rem;
@@ -146,21 +150,33 @@ body {
 
 .activity__status {
     display: none;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 0.5rem;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
     color: white;
     background-color: $dark-blue;
     border-radius: 20px;
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-block: 2rem;
     margin-top: 2rem;
     font-size: inherit;
+    div {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    div:nth-of-type(2) {
+        @media (min-width: 45rem) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
     .activity__title {
         font-size: inherit;
         font-weight: $fw-500;
     }
     .current {
-        //font-size: clamp(2rem, 1.7vw + 1.57rem, 2.94rem);
         font-size: clamp(2rem, 3.5vw + 1.179rem, 3rem);
         font-weight: $fw-300;
     }
@@ -171,7 +187,7 @@ body {
 }
 
 .active {
-    display: grid;
+    display: flex;
 }
 
 hr {

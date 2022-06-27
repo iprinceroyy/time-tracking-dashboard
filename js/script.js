@@ -24,14 +24,17 @@ const displayData = tar => {
             data.title
           )}">
             <div class="activity__status ${tar}">
-                <h2 class="activity__title">${data.title}</h2>
-                <hr>
-                <p class="current status__current__${formatClassName(
-                  data.title
-                )}">${data.timeframes[timeSpan].current}hrs</p>
-                <p class="previous status__previous__${formatClassName(
-                  data.title
-                )}">Last Week - ${data.timeframes[timeSpan].previous}hrs</p>
+                <div>
+                    <h2 class="activity__title">${data.title}</h2><hr>
+                </div>
+                <div>
+                    <p class="current status__current__${formatClassName(
+                      data.title
+                    )}">${data.timeframes[timeSpan].current}hrs</p>
+                    <p class="previous status__previous__${formatClassName(
+                      data.title
+                    )}">Last Week - ${data.timeframes[timeSpan].previous}hrs</p>
+                </div>
             </div>
         </section>`;
 

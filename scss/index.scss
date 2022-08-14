@@ -57,7 +57,7 @@ body {
     margin-block: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     @media (min-width: 45rem) {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -68,7 +68,7 @@ body {
 
 /*  Avatar Profile  */
 
-.profile {
+.dashboard__profile {
     background-color: $dark-blue;
     border-radius: 20px;
     @media (min-width: 380px) {
@@ -79,7 +79,6 @@ body {
 .profile__avatar {
     display: flex;
     align-items: center;
-    //height: min(80%, 600px);
     background-color: $blue;
     color: rgba($pale-blue, 0.7);
     margin-bottom: 2rem;
@@ -110,12 +109,58 @@ body {
 
 /*  Activity  */
 
+.dashboard__activity {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .activity {
     background-repeat: no-repeat;
     background-position: right 5% top -12%;
     background-size: 4rem;
     background-blend-mode: luminosity;
     border-radius: 20px;
+    overflow: hidden;
+    &__status {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 1rem;
+        color: white;
+        background-color: $dark-blue;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding-inline: 2rem;
+        padding-block: 2rem;
+        /* For top bg image border */
+        margin-top: 2rem;
+        font-size: inherit;
+        &--title {
+            font-size: inherit;
+            font-weight: $fw-500;
+        }
+        &--dots {
+            width: 1.2rem;
+            height: 0.1rem;
+            border: 4px dotted rgba($pale-blue, 0.7);
+            border-bottom: 0; // To make single line dots
+            margin-right: 0; // To align dots right side
+        }
+        &--current {
+            font-size: clamp(2rem, 3.5vw + 1.179rem, 3rem);
+            font-weight: $fw-300;
+        }
+        &--previous {
+            color: rgba($pale-blue, 0.7);
+            text-align: right;
+        }
+    }
+}
+
+.activity--work {
+    background-color: $light-red;
+    background-image: url('../assets/images/icon-work.svg');
 }
 
 .activity--work {
@@ -146,54 +191,4 @@ body {
 .activity--self-care {
     background-color: $soft-orange;
     background-image: url('../assets/images/icon-self-care.svg');
-}
-
-.activity__status {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: white;
-    background-color: $dark-blue;
-    border-radius: 20px;
-    padding-inline: 2rem;
-    padding-block: 2rem;
-    margin-top: 2rem;
-    font-size: inherit;
-    div {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-    }
-    div:nth-of-type(2) {
-        @media (min-width: 45rem) {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
-    .activity__title {
-        font-size: inherit;
-        font-weight: $fw-500;
-    }
-    .current {
-        font-size: clamp(2rem, 3.5vw + 1.179rem, 3rem);
-        font-weight: $fw-300;
-    }
-    .previous {
-        color: rgba($pale-blue, 0.7);
-        text-align: right;
-    }
-}
-
-.active {
-    display: flex;
-}
-
-hr {
-    width: 1.2rem;
-    height: 0.1rem;
-    border: 4px dotted rgba($pale-blue, 0.7);
-    border-bottom: 0; // To make single line dots
-    margin-right: 0; // To align dots right side
 }

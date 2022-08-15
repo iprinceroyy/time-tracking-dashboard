@@ -19,6 +19,7 @@ $very-dark-blue: hsl(226, 43%, 10%);
 $dark-blue: hsl(235, 46%, 20%);
 $desaturated-blue: hsl(235, 45%, 61%);
 $pale-blue: hsl(236, 100%, 87%);
+$white: hsl(0, 0%, 100%);
 
 /* ================
     Typography
@@ -46,6 +47,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    //min-height: 100vh;
 }
 
 .sr--only {
@@ -53,15 +55,18 @@ body {
 }
 
 .dashboard {
-    min-height: 100vh;
-    margin-block: 3rem;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    margin-block: 2rem;
     @media (min-width: 45rem) {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: minmax(25%, 1fr) minmax(auto, 3fr);
+        justify-content: center;
+        align-items: center;
+        //margin-inline: clamp(2rem, -8.66rem + 20.8vw, 8rem);
+        margin-inline: clamp(3.5rem, -0.061rem + 6.95vw, 5.5rem);
     }
 }
 
@@ -71,30 +76,37 @@ body {
 .dashboard__profile {
     background-color: $dark-blue;
     border-radius: 20px;
-    @media (min-width: 380px) {
-        grid-area: 1 / 1 / span 2 / span 1;
+    @media(min-width: 992px) {
+        align-self: center;
     }
 }
 
 .profile__avatar {
     display: flex;
     align-items: center;
+    gap: 1.3rem;
     background-color: $blue;
     color: rgba($pale-blue, 0.7);
-    margin-bottom: 2rem;
     padding-inline: 2rem;
     padding-block: 2rem;
     border-radius: 20px;
+    @media(min-width: 45rem) {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        padding-block: 2rem 5.9rem;
+    }
     img {
         width: 5rem;
         border: 2px solid white;
         border-radius: 50%;
     }
     figcaption {
-        padding-left: 1.3rem;
         span {
             display: block;
-            font-size: 1rem;
+            font-size: clamp(1rem, 0.39rem + 2.6vw, 2.5rem);
+            font-weight: $fw-300;
+            color: $white;
         }
     }
 }
@@ -102,8 +114,14 @@ body {
 .day {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 1rem;
+    padding-block: 1rem;
     color: rgba($pale-blue, 0.7);
+    @media(min-width: 45rem) {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-inline-start: 2rem;
+        padding-block: 2rem;
+    }
 }
 
 
@@ -113,6 +131,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    @media(min-width: 45rem) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        align-self: center;
+    }
 }
 
 .activity {
@@ -122,11 +145,12 @@ body {
     background-blend-mode: luminosity;
     border-radius: 20px;
     overflow: hidden;
+    height: fit-content;
     &__status {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
-        gap: 1rem;
+        row-gap: 1rem;
         color: white;
         background-color: $dark-blue;
         border-top-left-radius: 20px;
@@ -135,7 +159,10 @@ body {
         padding-block: 2rem;
         /* For top bg image border */
         margin-top: 2rem;
-        font-size: inherit;
+        @media(min-width: 45rem) {
+            grid-template-columns: 82% 18%;
+            row-gap: clamp(1.5rem, 0.628rem + 1.7vw, 2rem);
+        }
         &--title {
             font-size: inherit;
             font-weight: $fw-500;
@@ -148,12 +175,17 @@ body {
             margin-right: 0; // To align dots right side
         }
         &--current {
-            font-size: clamp(2rem, 3.5vw + 1.179rem, 3rem);
+            font-size: clamp(2rem, 1.39rem + 2.6vw, 3.5rem);
             font-weight: $fw-300;
         }
         &--previous {
             color: rgba($pale-blue, 0.7);
             text-align: right;
+            @media(min-width: 45rem) {
+                grid-area: 3 / 1 / span 1 / span 1;
+                text-align: start;
+                margin-top: -2rem;
+            }
         }
     }
 }

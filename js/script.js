@@ -20,5 +20,7 @@ const displayData = tar => {
 };
 const day = document.querySelector('.day');
 day.addEventListener('click', e => {
-    if (e.target.classList.contains('btn')) displayData('daily');
+    if (!e.target.classList.contains('btn')) return;
+
+    displayData('daily');
 });

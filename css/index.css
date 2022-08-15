@@ -79,12 +79,14 @@ body {
   font-size: clamp(1rem, 0.39rem + 2.6vw, 2.5rem);
   font-weight: 300;
   color: white;
+  margin-block-start: 0.4rem;
 }
 
 .day {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-block: 1rem;
+  padding-inline: 2rem;
   color: rgba(189, 193, 255, 0.7);
 }
 @media (min-width: 45rem) {
@@ -94,6 +96,9 @@ body {
     padding-inline-start: 2rem;
     padding-block: 2rem;
   }
+}
+.day .btn {
+  width: min-content;
 }
 
 /*  Activity  */

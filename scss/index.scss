@@ -94,7 +94,7 @@ body {
         flex-direction: column;
         gap: 2rem;
         align-items: flex-start;
-        padding-block: 2rem 5.9rem;
+        padding-block: 2rem 7rem;
     }
     img {
         width: 5rem;
@@ -140,7 +140,7 @@ body {
 
 .activity {
     background-repeat: no-repeat;
-    background-position: right 5% top -12%;
+    background-position: right 1.2rem top -0.5rem;
     background-size: 4rem;
     background-blend-mode: luminosity;
     border-radius: 20px;
@@ -162,6 +162,7 @@ body {
         @media(min-width: 45rem) {
             grid-template-columns: 82% 18%;
             row-gap: clamp(1.5rem, 0.628rem + 1.7vw, 2rem);
+            margin-top: 2.8rem;
         }
         &--title {
             font-size: inherit;
@@ -185,7 +186,7 @@ body {
             @media(min-width: 45rem) {
                 grid-area: 3 / 1 / span 1 / span 1;
                 text-align: start;
-                margin-top: -2rem;
+                margin-top: -1.5rem;
             }
         }
     }

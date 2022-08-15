@@ -28,7 +28,7 @@ $white: hsl(0, 0%, 100%);
 
 /*  Body Copy  */
 
-$font-size: 18px;
+$font-size: 1rem;
 
 /*  Font  */
 
@@ -47,7 +47,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    //min-height: 100vh;
+    font-size: $font-size;
 }
 
 .sr--only {
@@ -179,6 +179,7 @@ body {
             font-weight: $fw-300;
         }
         &--previous {
+            font-size: 0.92rem;
             color: rgba($pale-blue, 0.7);
             text-align: right;
             @media(min-width: 45rem) {

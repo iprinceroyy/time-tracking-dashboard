@@ -99,5 +99,6 @@ fetchData('weekly');
 
 // Animate card handler
 dashboard.addEventListener('click', e => {
-    e.target.closest('.activity').classList.toggle('animate');
+    const targetElement = e.target.closest('.activity');
+    if (targetElement) e.target.closest('.activity').classList.toggle('animate');
 });

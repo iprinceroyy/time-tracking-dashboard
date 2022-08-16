@@ -96,3 +96,15 @@ day.addEventListener('click', e => {
 
 // Initially display data for weekly
 fetchData('weekly');
+
+// After display
+document.querySelectorAll('.activity').forEach(act => {
+    act.addEventListener('click', e => {
+        console.log(e);
+    });
+});
+
+// Animate card
+dashboard.addEventListener('click', e => {
+    e.target.closest('.activity').classList.toggle('animate');
+});

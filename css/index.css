@@ -45,7 +45,7 @@ body {
 @media (min-width: 1025px) {
   .dashboard {
     margin-block: 7.6rem;
-    margin-inline: 13.3rem;
+    margin-inline: 10rem;
   }
 }
 

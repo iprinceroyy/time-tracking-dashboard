@@ -109,6 +109,8 @@ body {
 }
 .day .btn {
   width: min-content;
+  text-decoration: none;
+  color: inherit;
 }
 .day .btn:hover, .day .btn:active {
   cursor: pointer;

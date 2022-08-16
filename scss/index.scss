@@ -132,6 +132,8 @@ body {
     }
     .btn {
         width: min-content;
+        text-decoration: none;
+        color: inherit;
         &:hover,
         &:active {
             cursor: pointer;

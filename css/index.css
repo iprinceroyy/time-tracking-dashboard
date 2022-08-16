@@ -130,6 +130,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
   height: fit-content;
+  transition: transform 0.9s ease-in-out;
 }
 .activity__status {
   display: grid;
@@ -178,6 +179,10 @@ body {
     text-align: start;
     margin-top: -1.5rem;
   }
+}
+
+.animate {
+  transform: rotateY(360deg);
 }
 
 /* Add to activity section to show */

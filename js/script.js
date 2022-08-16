@@ -2,55 +2,58 @@
 
 const dashboard = document.querySelector('.dashboard__activity');
 const acitvity = document.querySelector('.activity');
-const activity = document.querySelector('.activity');
+const day = document.querySelector('.day');
 
-const activityArr = [
-    'work',
-    'play',
-    'study',
-    'exercise',
-    'social',
-    'self-care',
-];
+const formatActivity = (activity) => activity.toLowerCase().split(' ').join('-');
 
 const formatTitle = (title) => title[0].toUpperCase() + title.substring(1)
 
 let statusArr = [];
+let activityArr = [];
 let clicked = false;
 let html;
-
-const displayData = (tar) => {
+const fetchData = tar => {
     fetch('./data.json')
-        .then(Response => Response.json())
+        .then(response => response.json())
         .then(jsonData => {
-            jsonData.forEach((data, i) => {
-                const statuses = data.timeframes[`${tar}`];
-                console.log(statuses);
-                statusArr.push(statuses);
+            jsonData.forEach(data => {
+                // Status of each activity is pushed as obj like {curr: 2, prev: 4}
+                statusArr.push(data.timeframes[`${tar}`]);
+                // Each title with specified format is pushed
+                activityArr.push(formatActivity(data.title));
             });
 
-            console.log(statusArr);
-
+            // Before adding html, remove active class html
             if (clicked) checkActiveState();
 
-            statusArr.forEach((status, i) => {
-                html = `
-                    <div class="active activity activity--${activityArr[i]} ${tar}">
-                        <div class="activity__status">
-                        <h2 class="activity__status--title">${formatTitle(activityArr[i])}</h2>
-                        <hr class="activity__status--dots">
-                        <p class="activity__status--current">${status.current}hrs</p>
-                        <p class="activity__status--previous">Last Week - ${status.previous}hrs</p>
-                    </div>
-                </div>
-                `;
+            statusArr.forEach((status, i) => renderActivity(status, i, tar));
 
-                dashboard.insertAdjacentHTML('beforeend', html);
-            });
-
+            // Alter clicked state
             clicked = !clicked;
+            // Empty status arr to hold only 6 objects
             statusArr = [];
+            // Empty activity arr to hold onlye 6 activities
+            activityArr = [];
         });
+};
+
+// Render activity with status, i, tar being passed.
+const renderActivity = (status, i, tar) => {
+    html = `
+        <div class="active activity activity--${activityArr[i]} ${tar}">
+            <div class="activity__status">
+                <h2 class="activity__status--title">${formatTitle(activityArr[i])}</h2>
+                <hr class="activity__status--dots">
+                <p class="activity__status--current">${status.current}hrs</p>
+                <p class="activity__status--previous">Last Week - ${status.previous}hrs</p>
+            </div>
+        </div>
+    `;
+
+    dashboard.insertAdjacentHTML('beforeend', html);
+    // Active target btn
+    document.querySelector(`.js--${tar}`).classList.add('btn-active');
+
 };
 
 const checkActiveState = () => {
@@ -58,59 +61,38 @@ const checkActiveState = () => {
     const weekly = document.querySelectorAll('.weekly');
     const monthly = document.querySelectorAll('.monthly');
 
+    // If elements exist with the following class, first remove it
+    // Then call displayData func
     if (daily) {
-        daily.forEach(ele => {
-            ele.classList.remove('active');
-            console.log('daily class removed');
-        });
+        document.querySelector(`.js--daily`).classList.remove('btn-active');
+        daily.forEach(ele => ele.classList.remove('active'));
     }
 
     if (weekly) {
-        weekly.forEach(ele => {
-            ele.classList.remove('active');
-            console.log('weekly class removed');
-        });
+        document.querySelector(`.js--weekly`).classList.remove('btn-active');
+        weekly.forEach(ele => ele.classList.remove('active'));
     }
 
     if (monthly) {
-        monthly.forEach(ele => {
-            ele.classList.remove('active');
-            console.log('monthly class removed');
-        });
+        document.querySelector(`.js--monthly`).classList.remove('btn-active');
+        monthly.forEach(ele => ele.classList.remove('active'));
     }
 
+    // To persist clicked state
     clicked = !clicked;
 }
 
-const day = document.querySelector('.day');
 day.addEventListener('click', e => {
+    // Guard clause
     if (!e.target.classList.contains('btn')) return;
 
-    if (e.target.classList.contains('js--daily')) {
-        displayData('daily');
-    }
+    e.target.classList.contains('js--daily') && fetchData('daily');
 
-    if (e.target.classList.contains('js--weekly')) {
-        displayData('weekly');
-    }
+    e.target.classList.contains('js--weekly') && fetchData('weekly');
 
-    if (e.target.classList.contains('js--monthly')) {
-        displayData('monthly');
-    }
+    e.target.classList.contains('js--monthly') && fetchData('monthly');
+
 });
 
-displayData('weekly');
-
-const renderActivity = (arr, index) => {
-    html = `
-        <div class="activity activity--play ${day}">
-            <div class="activity__status">
-                <h2 class="activity__status--title">Play</h2>
-                <hr class="activity__status--dots">
-                <p class="activity__status--current">10hrs</p>
-                <p class="activity__status--previous">Last Week - 36hrs</p>
-            </div>
-        </div>
-    `;
-    dashboard.insertAdjacentElement('beforeend', html);
-};
+// Initially display data for weekly
+fetchData('weekly');

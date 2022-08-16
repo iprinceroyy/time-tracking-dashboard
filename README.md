@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live site URL here](https://timetrack-dashboard.netlify.app/)
 
 ## My process
 
@@ -53,6 +53,5 @@ dashboard.addEventListener('click', e => {
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@iprinceroyy](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@prince_popups](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@iprinceroyy](https://www.frontendmentor.io/profile/iprinceroyy)
+- Twitter - [@prince_popups](https://www.twitter.com/@prince_popups)

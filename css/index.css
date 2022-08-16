@@ -158,6 +158,10 @@ body {
   /* For top bg image border */
   margin-top: 2rem;
 }
+.activity__status:hover {
+  cursor: pointer;
+  background-color: #33387a;
+}
 @media (min-width: 45rem) {
   .activity__status {
     grid-template-columns: 82% 18%;

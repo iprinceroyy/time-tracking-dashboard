@@ -17,6 +17,7 @@ $soft-orange: hsl(43, 84%, 65%);
 
 $very-dark-blue: hsl(226, 43%, 10%);
 $dark-blue: hsl(235, 46%, 20%);
+$dark-blue-md:hsl(236, 41%, 34%);
 $desaturated-blue: hsl(235, 45%, 61%);
 $pale-blue: hsl(236, 100%, 87%);
 $white: hsl(0, 0%, 100%);
@@ -181,6 +182,10 @@ body {
         padding-block: 2rem;
         /* For top bg image border */
         margin-top: 2rem;
+        &:hover {
+            cursor: pointer;
+            background-color: $dark-blue-md;
+        }
         @media(min-width: 45rem) {
             grid-template-columns: 82% 18%;
             row-gap: clamp(1.5rem, 0.628rem + 1.7vw, 2rem);

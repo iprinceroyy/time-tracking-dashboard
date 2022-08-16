@@ -144,6 +144,8 @@ body {
 }
 
 .activity {
+    /* Initially hide section */
+    display: none;
     background-repeat: no-repeat;
     background-position: right 1.2rem top -0.5rem;
     background-size: 4rem;
@@ -195,6 +197,13 @@ body {
             }
         }
     }
+}
+
+
+/* Add to activity section to show */
+
+.active {
+    display: block;
 }
 
 .activity--work {

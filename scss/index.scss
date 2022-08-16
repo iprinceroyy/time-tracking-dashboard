@@ -126,6 +126,9 @@ body {
     }
     .btn {
         width: min-content;
+        &:hover {
+            cursor: pointer;
+        }
     }
     /* To style active btn */
     /* JS Classes */

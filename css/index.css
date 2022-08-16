@@ -102,6 +102,9 @@ body {
 .day .btn {
   width: min-content;
 }
+.day .btn:hover {
+  cursor: pointer;
+}
 .day .btn-active {
   color: white;
 }

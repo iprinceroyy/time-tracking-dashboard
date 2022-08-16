@@ -36,7 +36,11 @@ body {
     grid-template-columns: minmax(25%, 1fr) minmax(auto, 3fr);
     justify-content: center;
     align-items: center;
-    margin-inline: clamp(3.5rem, -0.061rem + 6.95vw, 5.5rem);
+  }
+}
+@media (min-width: 1024px) {
+  .dashboard {
+    margin-inline: 8rem;
   }
 }
 

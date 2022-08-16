@@ -66,7 +66,10 @@ body {
         justify-content: center;
         align-items: center;
         //margin-inline: clamp(2rem, -8.66rem + 20.8vw, 8rem);
-        margin-inline: clamp(3.5rem, -0.061rem + 6.95vw, 5.5rem);
+        //margin-inline: clamp(3.5rem, -0.061rem + 6.95vw, 5.5rem);
+    }
+    @media(min-width: 1024px) {
+        margin-inline: 8rem;
     }
 }
 

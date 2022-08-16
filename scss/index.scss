@@ -132,7 +132,8 @@ body {
     }
     .btn {
         width: min-content;
-        &:hover {
+        &:hover,
+        &:active {
             cursor: pointer;
         }
     }
@@ -182,7 +183,8 @@ body {
         padding-block: 2rem;
         /* For top bg image border */
         margin-top: 2rem;
-        &:hover {
+        &:hover,
+        &:active {
             cursor: pointer;
             background-color: $dark-blue-md;
         }

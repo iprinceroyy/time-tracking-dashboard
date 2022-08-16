@@ -110,7 +110,7 @@ body {
 .day .btn {
   width: min-content;
 }
-.day .btn:hover {
+.day .btn:hover, .day .btn:active {
   cursor: pointer;
 }
 .day .btn-active {
@@ -158,7 +158,7 @@ body {
   /* For top bg image border */
   margin-top: 2rem;
 }
-.activity__status:hover {
+.activity__status:hover, .activity__status:active {
   cursor: pointer;
   background-color: #33387a;
 }

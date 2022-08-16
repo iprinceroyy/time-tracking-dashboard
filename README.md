@@ -9,7 +9,6 @@
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-
 ## Overview
 
 ### The challenge

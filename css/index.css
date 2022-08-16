@@ -88,6 +88,8 @@ body {
   padding-block: 1rem;
   padding-inline: 2rem;
   color: rgba(189, 193, 255, 0.7);
+  /* To style active btn */
+  /* JS Classes */
 }
 @media (min-width: 45rem) {
   .day {
@@ -99,6 +101,9 @@ body {
 }
 .day .btn {
   width: min-content;
+}
+.day .btn-active {
+  color: white;
 }
 
 /*  Activity  */
